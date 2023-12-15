@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+	部门管理
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+        <button type="button" class="btn btn-primary" style="margin: 1% 0">新建部门</button>
+        <table class="table table-hover">
+            <caption><h2>部门列表</h2></caption>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>部门名称</th>
+                <th>部门代号</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>企划部</td>
+                <td>QH</td>
+                <td>
+                    <a href="" class="btn btn-primary btn-xs" style="margin-right: 3%">编辑</a>
+                    <a href="" class="btn btn-danger btn-xs">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>市场部</td>
+                <td>SC</td>
+                <td>
+                    <a href="" class="btn btn-primary btn-xs" style="margin-right: 3%">编辑</a>
+                    <a href="" class="btn btn-danger btn-xs">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>秘书办</td>
+                <td>MS</td>
+                <td>
+                    <a href="" class="btn btn-primary btn-xs" style="margin-right: 3%">编辑</a>
+                    <a href="" class="btn btn-danger btn-xs">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

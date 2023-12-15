@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 class Department(models.Model):
     title = models.CharField(verbose_name='部门标题', max_length=32)
+    dh = models.CharField(verbose_name='部门代号', max_length=32, default=None)
 
 
 class UserInfo(models.Model):
