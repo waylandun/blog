@@ -5,6 +5,11 @@ from django.db import models
 class Department(models.Model):
     title = models.CharField(verbose_name='部门标题', max_length=32)
     dh = models.CharField(verbose_name='部门代号', max_length=32, default=None)
+    is_delete = models.BooleanField(verbose_name='是否删除', default=False)
+
+    def __str__(self):
+        return self.title
+
 
 
 class UserInfo(models.Model):

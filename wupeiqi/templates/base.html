@@ -28,9 +28,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">部门管理</a></li>
-                <li class="active"><a href="#">员工管理</a></li>
-                <li><a href="#">信息管理</a></li>
+                <li class="{{ dep_active }}"><a href="{% url 'department_list' %}">部门管理</a></li>
+                <li class="{{ emp_active }}"><a href="{% url 'employee_list' %}">员工管理</a></li>
+                <li class=""><a href="#">信息管理</a></li>
 
             </ul>
 
