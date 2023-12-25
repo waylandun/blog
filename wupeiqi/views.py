@@ -34,12 +34,20 @@ def add_department(request):
 
 
 def update_department(request, depart_id):
-    depart = Department.objects.filter(id=depart_id).first()
+    '''
+    更新部门信息
+    :param request:
+    :param depart_id: 部门id
+    :return:
+    '''
+    # post请求为修改后的提交请求
     if request.POST:
         title = request.POST.get('title', "")
         dh = request.POST.get('dh', '')
         Department.objects.filter(id=depart_id).update(title=title, dh=dh)
-        return redirect(to="department_list")
+        return redirect(to="department_list")  # 重定向到部门列表
+    # get请求查看对应id的部门信息返回
+    depart = Department.objects.filter(id=depart_id).first()
     return render(request, 'update_depart.html', {'depart': depart})
 
 
@@ -49,6 +57,8 @@ def delete_department(request, depart_id):
 
 
 '''
+# Form 组件渲染前端，方便后端检验用户数据
+# 使用过于麻烦，ModelForm可简化部分流程
 class UserFrom(forms.Form):
     name = forms.CharField(widget=forms.TextInput)
     password = forms.CharField(widget=forms.PasswordInput)
@@ -60,10 +70,12 @@ class UserFrom(forms.Form):
 
 
 class UserForm(forms.ModelForm):
-    # xx = forms.CharField(widget=forms.CharField)  # 继承的基础上自定义
+    # xx = forms.CharField(widget=forms.CharField)  # 自定义额外的组件
     class Meta:
-        model = UserInfo
+        model = UserInfo  # 要渲染的模型
+        # 要渲染的模型中的字段 * fields 必填
         fields = ['name', 'password', 'age', 'account', 'create_time', 'gender', 'depart']
+        # fields = []  # 不渲染任何组件
         # fields = ['name', 'password', 'age', 'account', 'create_time', 'gender', 'depart','xx']
 
 
