@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'blog',
         'USER': 'root',
         'PASSWORD': 'KaiFa@00#99',
-        'HOST': 'yuancheng-kz-9512.kaishin.fun',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
